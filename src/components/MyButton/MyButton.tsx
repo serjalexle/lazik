@@ -7,8 +7,9 @@ export interface IProps {
   big?: boolean;
 }
 
+const rootClasses = ["my-button"];
+
 const MyButton = ({ children, color, big, ...props }: IProps) => {
-  const rootClasses = ["my-button"];
   if (big) {
     rootClasses.push("big-btn");
   }
