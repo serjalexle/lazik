@@ -1,8 +1,9 @@
-import React, { Children, ReactNode } from "react";
+import React, { ReactNode } from "react";
+import "./Grid.css";
 
 interface IProps {
   children: ReactNode | ReactNode[];
-  gs: number;
+  gs?: number;
   item?: boolean;
   container?: boolean;
   style?: React.CSSProperties;
@@ -10,6 +11,29 @@ interface IProps {
 
 const Grid = ({ container, item, children, style, gs, ...props }: IProps) => {
   const rootClasses = [];
+  // const calculatedGridWidth = useMemo(() => {
+  //   if (container) {
+  //     return "100%";
+  //   }
+
+  //   if (!gs) {
+  //     return "100%";
+  //   }
+
+  //   return `${100 / (12 / gs)}%`;
+  // }, [gs, container]);
+
+  const calculatedGridWidth = () => {
+    if (container) {
+      return "100%";
+    }
+
+    if (!gs) {
+      return "100%";
+    }
+
+    return `${100 / (12 / gs)}%`;
+  };
 
   if (item && container) {
     throw new Error("Grid item and container cannot be used together");
@@ -32,12 +56,8 @@ const Grid = ({ container, item, children, style, gs, ...props }: IProps) => {
       {...props}
       className={rootClasses.join(" ")}
       style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alignItems: "center",
         ...style,
-        width: gs ? 100 / gs + "%" : "100%",
+        width: calculatedGridWidth(),
       }}
     >
       {children}

@@ -1,3 +1,4 @@
-import MyButton from "./components/MyButton/MyButton";
+import Button from "./components/Button/Button";
+import Grid from "./components/Grid/Grid";
 
-export { MyButton };
+export { Button, Grid };
