@@ -11,17 +11,6 @@ interface IProps {
 
 const Grid = ({ container, item, children, style, gs, ...props }: IProps) => {
   const rootClasses = [];
-  // const calculatedGridWidth = useMemo(() => {
-  //   if (container) {
-  //     return "100%";
-  //   }
-
-  //   if (!gs) {
-  //     return "100%";
-  //   }
-
-  //   return `${100 / (12 / gs)}%`;
-  // }, [gs, container]);
 
   const calculatedGridWidth = () => {
     if (container) {
