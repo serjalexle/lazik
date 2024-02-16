@@ -6,6 +6,7 @@
   align-items: center;
 }
 
+// ? CONTAINED BTN
 .contained-btn {
   background-color: var(--primary);
   color: var(--white);
@@ -13,7 +14,6 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 0px 10px var(--primary);
   box-sizing: border-box;
   border: 0px;
   outline: none;
@@ -21,6 +21,7 @@
   letter-spacing: 1px;
   font-family: var(--font);
   &:hover {
+    box-shadow: 0px 0px 10px var(--primary);
     background-color: color-mix(in srgb, var(--primary) 90%, var(--white));
   }
   &:active {
@@ -29,7 +30,52 @@
   }
 }
 
-/* ? BTN SIZES */
+// ? OUTLINED BTN
+.outlined-btn {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--primary) 90%, var(--white));
+  outline: none;
+  width: 100%;
+  letter-spacing: 1px;
+  font-family: var(--font);
+  &:hover {
+    border: 1px solid var(--primary);
+    box-shadow: 0px 0px 10px var(--primary);
+  }
+  &:active {
+    width: calc(100% - 10px);
+  }
+}
+
+// ? TEXT BTN
+.text-btn {
+  background-color: transparent;
+  color: var(--primary);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  width: 100%;
+  letter-spacing: 1px;
+  font-family: var(--font);
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    width: calc(100% - 10px);
+  }
+}
+
+// ? BTN SIZES
 .large-btn {
   padding: 15px 25px;
   font-size: 16px;
@@ -48,19 +94,9 @@
   font-weight: 600;
 }
 
-/* ? BTN SIZES */
 
-@keyframes clickAnimation {
-  0% {
-    background-color: #0077ff;
-  }
-  50% {
-    background-color: #008cff;
-  }
-  100% {
-    background-color: #0077ff;
-  }
-}
+
+// ? MEDIA PHONE
 
 @media screen and (max-width: 500px) {
   .btnContainer {

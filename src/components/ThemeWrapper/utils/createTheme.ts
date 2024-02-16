@@ -1,5 +1,3 @@
-interface IThemeOptions {}
-
 export interface ITheme {
   mode: "light" | "dark";
   colors: {
