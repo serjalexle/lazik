@@ -1,10 +1,6 @@
 import React from "react";
-import "./CSSResetter.css";
+import "./CSSResetter.scss";
 
-const CSSResetter = () => {
-
-
-  return <div />;
-};
+const CSSResetter = () => null;
 
 export default CSSResetter;

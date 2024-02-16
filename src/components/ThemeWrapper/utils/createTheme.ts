@@ -1,5 +1,8 @@
-interface IThemeOptions {
-  generalColors: {
+interface IThemeOptions {}
+
+export interface ITheme {
+  mode: "light" | "dark";
+  colors: {
     primary: string;
     secondary: string;
     success: string;
@@ -8,58 +11,35 @@ interface IThemeOptions {
     info: string;
     white: string;
     black: string;
+    background: string;
+    [key: string]: string;
   };
-  generalFont: {
+  generalFont?: {
     family: string;
   };
-  generalBorder: {
+  generalBorder?: {
     radius: string;
   };
 }
 
-export interface ITheme {
-  mode: "light" | "dark";
-  light: Partial<IThemeOptions>;
-  dark: Partial<IThemeOptions>;
-}
-
 const defaultTheme: ITheme = {
   mode: "dark",
-  light: {
-    generalColors: {
-      primary: "#0062FF",
-      secondary: "#A162F7",
-      success: "#24CA49",
-      danger: "#DB3031",
-      warning: "#FF7A2F",
-      info: "#06D7F6",
-      white: "#ffffff",
-      black: "#000000",
-    },
-    generalFont: {
-      family: "Roboto, sans-serif",
-    },
-    generalBorder: {
-      radius: "5px",
-    },
+  colors: {
+    primary: "#0062FF",
+    secondary: "#A162F7",
+    success: "#24CA49",
+    danger: "#DB3031",
+    warning: "#FF7A2F",
+    info: "#06D7F6",
+    white: "#ffffff",
+    black: "#000000",
+    background: "#1F1F1F",
   },
-  dark: {
-    generalColors: {
-      primary: "#0062FF",
-      secondary: "#A162F7",
-      success: "#24CA49",
-      danger: "#DB3031",
-      warning: "#FF7A2F",
-      info: "#06D7F6",
-      white: "#ffffff",
-      black: "#000000",
-    },
-    generalFont: {
-      family: "Roboto, sans-serif",
-    },
-    generalBorder: {
-      radius: "5px",
-    },
+  generalFont: {
+    family: "Roboto, sans-serif",
+  },
+  generalBorder: {
+    radius: "5px",
   },
 };
 

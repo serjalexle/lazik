@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./ThemeWrapper.css";
+import "./ThemeWrapper.scss";
 import { ITheme } from "./utils/createTheme";
 
 interface IProps {
@@ -8,26 +8,18 @@ interface IProps {
 }
 
 const ThemeWrapper = ({ children, theme }: IProps) => {
-  const rootCssVars: any = {
-    "--background": "yellow",
-    "--background2": "green",
-  };
+  if (theme?.colors) {
+    const colors = Object.keys(theme?.colors);
+    const font = theme?.generalFont?.family;
 
-  const root = document.documentElement;
-  for (const key in rootCssVars) {
-    root.style.setProperty(key, rootCssVars[key]);
+    const root = document.documentElement;
+    for (const color of colors) {
+      root.style.setProperty(`--${color}`, theme.colors[`${color}`]);
+    }
+    root.style.setProperty("--font", font || "Roboto, sans-serif");
   }
 
-  return (
-    <div
-      className={theme?.mode ? `${theme?.mode}-mode-theme` : "dark-mode-theme"}
-      style={{
-        backgroundColor: `var(--background2)`
-      }}
-    >
-      {children}
-    </div>
-  );
+  return children;
 };
 
 export default ThemeWrapper;

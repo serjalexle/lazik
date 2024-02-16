@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./Grid.css";
+import "./Grid.scss";
 
 interface IProps {
   children: ReactNode | ReactNode[];

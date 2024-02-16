@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "./Button.css";
+import "./Button.scss";
 import { sizeClassesBtn, variantClassesBtn } from "./classes";
 import { isBtnColored, isBtnRounded } from "./utils";
 
